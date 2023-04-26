@@ -1,7 +1,6 @@
 const colors = [  '#FF0000' ,'#FFA500','#FFFF00','#3CB043','#00BFFF',"#5c6dc9","#192586",'#8F00FF','#FF007F',"#964b00"] // Red ,Orange,Yellow,Green, Blue,Indigo ,dark blue,violet,pink,brown
 
 const colorGrid = document.querySelector('.color-grid');
-const customColorBtn = document.querySelector('#custom-color-btn');
 const numRows = 10;
 const numCols = 10;
 let grid = [];
@@ -11,14 +10,14 @@ const orangeArray=[4,5,6,7,8,9,14,15,16,17,24,25,26,27,34,35,36,37]
 const violetArray=[85,86,87,88,89,95,96,97,98,99]
 const pinkArray=[18,19,28,29,38,39,48,49,58,59,68,69,78,79]
 const skyBlueArray=[43,44,45,46,47,53,54,55,56,57,63,64,65,66,67,73,74,75,76,77]
-// Initialize grid with random colors
+// Initialize grid with given colors
 for (let i = 0; i < numRows; i++) {
   let row = [];
   const tr = document.createElement('tr');
   for (let j = 0; j < numCols; j++) {
     const cell = document.createElement('td');
     cell.classList.add('color-cell');
-    //let color = colors[Math.floor(Math.random() * colors.length)];
+    //let color = colors[Math.floor(Math.random() * colors.length)]; //for random grid generation
     let color;
     if(redArray.includes(i*10+j))
     {
