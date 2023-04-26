@@ -1,0 +1,22 @@
+.color-grid {
+  border-collapse: collapse;
+}
+
+.color-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+}
+
+.selected{
+  border: 2px solid black;
+}
+
+.static-color-grid{
+  border-collapse : collapse
+}
+.pick-color-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+}
