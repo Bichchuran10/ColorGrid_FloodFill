@@ -69,16 +69,17 @@ function floodFill(row, col, newColor, oldColor) {
     return;
   }
   const cell = colorGrid.rows[row].cells[col];
+  
   const color = grid[row][col];
-  if (color !== oldColor || color === newColor) {
+  if (color !== oldColor || color === newColor) { 
     return;
   }
   cell.style.backgroundColor = newColor;
   grid[row][col] = newColor;
-  floodFill(row - 1, col, newColor, oldColor); // Fill north
-  floodFill(row + 1, col, newColor, oldColor); // Fill south
-  floodFill(row, col - 1, newColor, oldColor); // Fill west
-  floodFill(row, col + 1, newColor, oldColor); // Fill east
+  floodFill(row - 1, col, newColor, oldColor); // Fill up
+  floodFill(row + 1, col, newColor, oldColor); // Fill down
+  floodFill(row, col - 1, newColor, oldColor); // Fill left
+  floodFill(row, col + 1, newColor, oldColor); // Fill right
 }
 
 
@@ -98,7 +99,7 @@ const colorCells = document.querySelectorAll('.pick-color-cell');
       const colIndex = selectedCell.cellIndex;
       const oldColor = grid[rowIndex][colIndex];
       floodFill(rowIndex, colIndex, customColor, oldColor);
-      grid[rowIndex][colIndex] = customColor;
+      //grid[rowIndex][colIndex] = customColor;
     }
 
     });
